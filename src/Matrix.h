@@ -14,7 +14,7 @@ class Matrix {
         void get_identity();
 		Vec4 operator*(const Vec4 &rhs);
 		Matrix operator*(const Matrix &rhs);
-		Matrix operator=(const Matrix &rhs);
+		Matrix &operator=(const Matrix &rhs);
         void transpose();
 };
 Matrix  inverse(const Matrix &rhs);

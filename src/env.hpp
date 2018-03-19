@@ -7,8 +7,6 @@
 #include <iostream>
 #include <sstream>
 
-#include "Human.hpp"
-
 class InputHandler {
  public:
   int screenWidth;

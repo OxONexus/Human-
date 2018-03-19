@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Human.hpp"
 #include "Bone.hpp"
 
 class Charactere {
@@ -10,7 +9,10 @@ class Charactere {
 		Charactere(Vec3 pos);
 		~Charactere();
 		Charactere &operator=(const Charactere &a);
+		void update();
 	private :
 		Vec3 _pos;
+		Vec3 _rot;
 		Bone *_root;
+		std::vector<Matrix> _array_mat;
 };

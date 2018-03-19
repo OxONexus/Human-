@@ -19,7 +19,7 @@ void Matrix::print()
     printf("\n");
 }
 
-Matrix Matrix::operator=(const Matrix &rhs) {
+Matrix &Matrix::operator=(const Matrix &rhs) {
 	if(this != &rhs) {
 		memcpy(mat4, rhs.mat4, 16 * sizeof(float));
 	}

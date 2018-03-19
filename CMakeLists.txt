@@ -12,6 +12,7 @@ set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 add_subdirectory(third-party/glfw)
 include_directories(third-party/glfw/include)
 include_directories(third-party/glad)
+include_directories(third-party/glm)
 include_directories(third-party)
 
 SET(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)

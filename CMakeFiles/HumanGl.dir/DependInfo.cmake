@@ -13,6 +13,7 @@ set(CMAKE_C_COMPILER_ID "AppleClang")
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "third-party/glfw/include"
   "third-party/glad"
+  "third-party/glm"
   "third-party"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
@@ -32,6 +33,7 @@ set(CMAKE_CXX_COMPILER_ID "AppleClang")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "third-party/glfw/include"
   "third-party/glad"
+  "third-party/glm"
   "third-party"
   )
 

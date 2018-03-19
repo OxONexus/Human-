@@ -7,11 +7,11 @@ C_FLAGS =
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/apaget/Documents/HumanGL++/third-party/glfw/include -I/Users/apaget/Documents/HumanGL++/third-party/glad -I/Users/apaget/Documents/HumanGL++/third-party 
+C_INCLUDES = -I/Users/apaget/Documents/HumanGL++/third-party/glfw/include -I/Users/apaget/Documents/HumanGL++/third-party/glad -I/Users/apaget/Documents/HumanGL++/third-party/glm -I/Users/apaget/Documents/HumanGL++/third-party 
 
 CXX_FLAGS =  -std=gnu++11 -g  
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/apaget/Documents/HumanGL++/third-party/glfw/include -I/Users/apaget/Documents/HumanGL++/third-party/glad -I/Users/apaget/Documents/HumanGL++/third-party 
+CXX_INCLUDES = -I/Users/apaget/Documents/HumanGL++/third-party/glfw/include -I/Users/apaget/Documents/HumanGL++/third-party/glad -I/Users/apaget/Documents/HumanGL++/third-party/glm -I/Users/apaget/Documents/HumanGL++/third-party 
 

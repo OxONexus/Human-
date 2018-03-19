@@ -8,12 +8,14 @@ Camera::Camera(Vec3 position, Vec3 targetPosition, int w, int h)
     height = h;
 
 	(void)targetPosition;
+	Vec3 direction = (targetPosition - position);
+	direction.normalize();
     mouseXpos = ((float)w / 2.0f);
     mouseYpos = ((float)h / 2.0f);
 
-    verAngle = 0.0f;
-	horAngle = 180.0f * (M_PI / 180.0f);
-    proj = projMatrix(45.0f, ((float)w /(float)h));
+  verAngle = asinf(direction.y);
+  horAngle = atan2(direction.x, direction.z);
+    proj = projMatrix(45.0f * (M_PI / 180.0f), ((float)w /(float)h));
     update_matrix();
 }
 
@@ -22,8 +24,20 @@ void Camera::update_matrix(){
     deltaTime = float(currentTime - lastTime);
     lastTime = (float)currentTime;
     if (mouseMoved) {
-        horAngle += 0.5f * deltaTime * (width / 2.0f - mouseXpos);
-        verAngle += 0.5f * deltaTime * (height / 2.0f - mouseYpos);
+        horAngle += 0.5f * 0.0001 * (oldmouseXpos - mouseXpos);
+        verAngle += 0.5f * 0.0001 * (oldmouseYpos - mouseYpos);
+		if (horAngle > M_PI / 2.0f) {
+			horAngle = M_PI / 2.0f;
+		}
+		if (horAngle < -(M_PI / 2.0f)) {
+			horAngle = -M_PI / 2.0f;
+		}
+		if (verAngle > M_PI / 2.0f) {
+			verAngle = M_PI / 2.0f;
+		}
+		if (verAngle < -(M_PI / 2.0f)) {
+			verAngle = -M_PI / 2.0f;
+		}
         mouseMoved = false;
     }
     dir = Vec3(cos(verAngle) * sin(horAngle),
@@ -46,40 +60,35 @@ Matrix getMVP(Matrix model, Matrix view, Matrix proj){
 }
 
 void Camera::update(Env &env) {
-	/*
-	if (inputHandler == nullptr)
-        return;
-	if (inputHandler->keybrDisabled)
-        return;
-	if (inputHandler->keys[GLFW_KEY_LEFT_SHIFT]) {
+	if (env.inputHandler.keys[GLFW_KEY_LEFT_SHIFT]) {
 		speed = 9.0f;
 	} else {
 		speed = 3.0f;
 	}
-    if (inputHandler->keys[GLFW_KEY_UP] || inputHandler->keys[GLFW_KEY_W]){
-        Vec3 tmp = dir * speed * deltaTime;
+    if (env.inputHandler.keys[GLFW_KEY_UP] || env.inputHandler.keys[GLFW_KEY_W]){
+        Vec3 tmp = dir * speed * env.getDeltaTime();
         pos = pos + tmp;
     }
-    if (inputHandler->keys[GLFW_KEY_DOWN] || inputHandler->keys[GLFW_KEY_S]){
-        Vec3 tmp = dir * speed * deltaTime;
+    if (env.inputHandler.keys[GLFW_KEY_DOWN] || env.inputHandler.keys[GLFW_KEY_S]){
+        Vec3 tmp = dir * speed * env.getDeltaTime();
         pos = pos - tmp;
     }
-    if (inputHandler->keys[GLFW_KEY_RIGHT] || inputHandler->keys[GLFW_KEY_D]){
+    if (env.inputHandler.keys[GLFW_KEY_RIGHT] || env.inputHandler.keys[GLFW_KEY_D]){
         Vec3 right = up.cross(dir);
-        Vec3 tmp = right * speed * deltaTime;
+        Vec3 tmp = right * speed * env.getDeltaTime();
         pos = pos - tmp;
     }
-    if (inputHandler->keys[GLFW_KEY_LEFT] || inputHandler->keys[GLFW_KEY_A]){
+    if (env.inputHandler.keys[GLFW_KEY_LEFT] || env.inputHandler.keys[GLFW_KEY_A]){
         Vec3 right = up.cross(dir);
-        Vec3 tmp = right * speed * deltaTime;
+        Vec3 tmp = right * speed * env.getDeltaTime();
         pos = pos + tmp;
     }
-	if (inputHandler->mouseDisabled)
-        return;
-	if (inputHandler->mousex != mouseXpos || inputHandler->mousey != mouseYpos) {
-		mouseXpos = inputHandler->mousex;
-		mouseYpos = inputHandler->mousey;
+	if (env.inputHandler.mousex != mouseXpos || env.inputHandler.mousey != mouseYpos) {
+		oldmouseXpos = mouseXpos;
+		oldmouseYpos = mouseYpos;
+		mouseXpos = env.inputHandler.mousex;
+		mouseYpos = env.inputHandler.mousey;
 		mouseMoved = true;
 	}
-	*/
+    update_matrix();
 }

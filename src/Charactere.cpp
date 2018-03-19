@@ -12,6 +12,10 @@ Charactere::Charactere(const Charactere &src) {
 	*this = src;
 }
 
+void Charactere::update() {
+
+}
+
 Charactere &Charactere::operator=(const Charactere &a) {
 	if (this != &a) {
 		

@@ -15,6 +15,8 @@ public:
 	int     height;
 	float	mouseXpos;
 	float	mouseYpos;
+	float 	oldmouseXpos;
+	float   oldmouseYpos;
 
 	Camera(Vec3 pos = Vec3(), Vec3 rot = Vec3(), int width = 0, int height = 0);
 	void update(Env &env);

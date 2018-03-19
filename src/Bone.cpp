@@ -18,7 +18,7 @@ Bone::~Bone(void) {
 }
 
 
-Bone &	Bone::operator=(Bone const & rhs) {
+Bone &Bone::operator=(Bone const & rhs) {
 	if (this != &rhs){
 
 	}
