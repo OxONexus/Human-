@@ -5,6 +5,8 @@ int main(int argc, char *argv[])
 {
 	Env env(1280, 720);
 	Renderer render(env);
+	Charactere test;
+
 	while (glfwWindowShouldClose(env.window) == false) {
 		env.update();
 		glClearColor(0.f,0.f,0.f,1.f);

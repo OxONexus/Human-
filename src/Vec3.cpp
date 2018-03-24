@@ -214,6 +214,13 @@ Vec3&   Vec3::operator-=(const Vec3& rhs){
     return *this;
 }
 
+
+Vec3&   Vec3::operator=(const Vec3& rhs){
+    this->x = rhs.x;
+    this->y = rhs.y;
+    this->z = rhs.z;
+    return *this;
+}
 ///////////////Vec4//////////////
 
 Vec4::Vec4(float x1, float y1, float z1, float w1) {

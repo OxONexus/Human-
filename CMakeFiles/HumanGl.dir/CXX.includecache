@@ -9,6 +9,10 @@
 /Users/apaget/Documents/HumanGL++/src/Bone.cpp
 Bone.hpp
 /Users/apaget/Documents/HumanGL++/src/Bone.hpp
+iostream
+-
+fstream
+-
 
 /Users/apaget/Documents/HumanGL++/src/Bone.hpp
 Human.hpp

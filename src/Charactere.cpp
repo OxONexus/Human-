@@ -1,10 +1,11 @@
 #include "Charactere.hpp"
 
-Charactere::Charactere(): _pos(0, 0, 0) {
-	_root = nullptr;
+
+Charactere::Charactere(): _pos(0, 0, 0), _root() {
 }
-Charactere::Charactere(Vec3 pos): _pos(pos) {
-	_root = nullptr;
+
+Charactere::Charactere(Vec3 pos, std::string filename): _pos(pos), _root() {
+	_root.read_bvhfile(filename);
 }
 Charactere::~Charactere() {}
 
