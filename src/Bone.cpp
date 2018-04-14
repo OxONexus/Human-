@@ -41,7 +41,6 @@ std::vector<std::string> split(const std::string &s, char delim) {
 }
 
 Bone::Bone(void) {
-	read_bvhfile("asset/simple.bvh");
 }
 
 
@@ -61,6 +60,14 @@ Bone::Bone(Bone const & src) {
 
 Bone::~Bone(void) {
 
+}
+
+Matrix Bone::get_model() {
+	return _pos;
+}
+
+std::vector<Bone> *Bone::get_child() {
+	return &_child;
 }
 
 Bone &Bone::operator=(Bone const & rhs) {
@@ -181,6 +188,6 @@ void Bone::read_bvhfile(std::string filename) {
 	/*
 	while (std::getline(file, line))
 		std::cout << line << std::endl;
-*/
+		*/
 }
 

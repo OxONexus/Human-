@@ -23,3 +23,13 @@ Charactere &Charactere::operator=(const Charactere &a) {
 	}
 	return *this;
 }
+
+Bone *Charactere::get_bones() {
+	return &_root;
+}
+
+Matrix Charactere::get_model() {
+	Matrix iden;
+	iden.get_identity();
+	return iden;
+}

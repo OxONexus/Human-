@@ -1,4 +1,4 @@
-# Install script for directory: /Users/apaget/Documents/HumanGL++
+# Install script for directory: /Users/apaget/Documents/humangl
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/apaget/Documents/HumanGL++/third-party/glfw/cmake_install.cmake")
+  include("/Users/apaget/Documents/humangl/third-party/glfw/cmake_install.cmake")
 
 endif()
 
@@ -46,5 +46,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/apaget/Documents/HumanGL++/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/apaget/Documents/humangl/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

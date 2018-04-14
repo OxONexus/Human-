@@ -10,6 +10,9 @@ class Charactere {
 		~Charactere();
 		Charactere &operator=(const Charactere &a);
 		void update();
+		Bone *get_bones();
+		Matrix get_model();
+
 	private :
 		Vec3 _pos;
 		Vec3 _rot;

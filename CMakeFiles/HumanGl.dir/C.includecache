@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/apaget/Documents/HumanGL++/third-party/glad/glad.c
+/Users/apaget/Documents/humangl/third-party/glad/glad.c
 stdio.h
 -
 stdlib.h

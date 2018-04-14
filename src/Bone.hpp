@@ -10,9 +10,15 @@ class Bone {
 		Bone(Bone const & src);
 		virtual ~Bone(void);
 		Bone & operator=(Bone const & rhs);
+
 		void read_bvhfile(std::string filename);
-		void setPos(Vec3 pos);
 		Bone* append_child(std::string name);
+
+		void setPos(Vec3 pos);
+
+		Matrix 				get_model();
+		std::vector<Bone> 	*get_child();
+
 	private:
 		Matrix _rot;
 		Matrix _pos;
